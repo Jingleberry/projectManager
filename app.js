@@ -1,7 +1,7 @@
 var projectManager = angular.module('projectManager', [])
 
 .config(function ($routeProvider) {
-  $routeProvider
+	$routeProvider
 		.when('/',
 			{
 				templateUrl: './app/partials/listProjects.html',
@@ -22,10 +22,10 @@ var projectManager = angular.module('projectManager', [])
 				templateUrl: './app/partials/deleteProject.html',
 				controller:  'deleteController'
 			})
-		.when('/editProject',
+		.when('/editProject/:title',
 			{
 				templateUrl: './app/partials/editProject.html',
-				controller:  'editController'
+				controller:  'projectFinder'
 			})
 		.otherwise({ redirectTo: '/' });
 });
