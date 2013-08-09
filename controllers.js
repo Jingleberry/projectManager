@@ -2,10 +2,11 @@
 var controllers = {};
 
 controllers.projectData = function ($scope, dataFactory) {
-  $scope.projects = dataFactory.getAllProjects();
+	$scope.projects = dataFactory.getAllProjects();
 };
 
-// Queries projects Array for a specific project (Array Index)
+// Not quite finished... queries object literal and pulls out the first Array. Supposed to pull out the Index
+// that corresponds with the selected link from listProjects.html
 controllers.projectFinder = function ($scope, $routeParams, dataFactory) {
 	$scope.projects = dataFactory.getAllProjects();
 	var findProject = function () {
@@ -19,12 +20,9 @@ controllers.projectFinder = function ($scope, $routeParams, dataFactory) {
 	$scope.project = findProject();
 };
 
-// Passes all controllers to the projectManager App
-projectManager.controller(controllers);
-
-
-// TODO
+// This works. New projects are added. Errors if fields are undefined, need to add validation logic
 projectManager.controller('addController', function ($scope, dataFactory) {
+		$scope.projects = dataFactory.getAllProjects();
 		$scope.addProject = function () {
 			$scope.projects.push(
 			{
@@ -35,3 +33,6 @@ projectManager.controller('addController', function ($scope, dataFactory) {
 			});
 		};
 });
+
+// Passes all controllers to the projectManager App
+projectManager.controller(controllers);
