@@ -1,17 +1,17 @@
 <div data-ng-controller="projectData">
 
-  <input type="text" placeholder="Search, or enter new project title" data-ng-model="search">
+	<input type="text" placeholder="Search projects..." data-ng-model="search">
 
-	<button ng-click class="btn btn-primary btn-sm" type="button">Add Project</button>
+	<a href="#/addProject" class="btn btn-primary btn-sm" type="button">Add Project</a>
 	
 	<ol>
 		<li data-ng-repeat="project in projects | filter:search">
 
-			<a href="#/projectDetails/{{ project.title }}">{{ project.title }}</a>
+			<a href="#/projectDetails/{{ project.title }}">{{ project.title }}</a> - {{ project.author }}
 			
-			[<a href="">Edit</a>]
-			[<a href="">Delete</a>]
-
+			<a href="#/editProject/{{ project.title }}">Edit</a>
+			
+			<a href="#/projectDetails/{{ project.title }}">Delete</a>
 		</li>
 	</ol>
 </div>
