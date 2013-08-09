@@ -1,11 +1,18 @@
-<div>
-  <a href="#/">Return To List View</a>
-	<ul>
-		<li data-ng-controller="projectFinder">
-			<div>Title: {{ project.title }}</div>
-			<div>Author: {{ project.author }}</div>
-			<div>Status: {{ project.status }}</div>
-			<div>Launch: {{ project.launch }}</div>
-		</li>
-	</ul>
+<div data-ng-controller="addController">
+	<a href="#/">Return To List View</a>
+	<br>
+	<label>Title:</label><br>
+	<input type="text" data-ng-model="newTitle.title">
+	<br>
+	<label>Author:</label><br>
+	<input type="text" data-ng-model="newAuthor.author">
+	<br>
+	<label>Status:</label><br>
+	<input type="text" data-ng-model="newStatus.status">
+	<br>
+	<label>Launch:</label><br>
+	<input type="text" data-ng-model="newLaunch.launch">
+	<br>
+	<a href="#/" data-ng-click="addProject()" class="btn btn-primary">Commit</a>
+	<br>
 </div>
