@@ -1,19 +1,19 @@
-<div data-ng-controller="editController">
-  <h2>Edit Project</h2>
+<div data-ng-controller="projectController">
+	<h2>Edit Project</h2>
 	<a href="#/">Return To List View</a>
 	<br>
 	<label>Title:</label><br>
-	<input type="text"  value="{{ project.title }}">
+	<input type="text"  data-ng-model="project.title">
 	<br>
 	<label>Author:</label><br>
-	<input type="text" value="{{ project.author }}">
+	<input type="text" data-ng-model="project.author">
 	<br>
 	<label>Status:</label><br>
-	<input type="text" value="{{ project.status }}">
+	<input type="text" data-ng-model="project.status">
 	<br>
 	<label>Launch:</label><br>
-	<input type="text" value="{{ project.launch }}">
+	<input type="text" data-ng-model="project.launch">
 	<br>
-	<a href="#/" data-ng-click="editProject()" class="btn btn-primary">Commit</a>
+	<a href="#/"  class="btn btn-primary">Commit</a>
 	<br>
 </div>
