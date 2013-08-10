@@ -10,22 +10,17 @@ var projectManager = angular.module('projectManager', [])
 		.when('/projectDetails/:title',
 			{
 				templateUrl: './app/partials/projectDetails.html',
-				controller:  'projectFinder'
+				controller:  'projectController'
 			})
 		.when('/addProject',
 			{
 				templateUrl: './app/partials/addProject.html',
 				controller:  'addController'
 			})
-		.when('/deleteProject',
-			{
-				templateUrl: './app/partials/deleteProject.html',
-				controller:  'deleteController'
-			})
 		.when('/editProject/:title',
 			{
 				templateUrl: './app/partials/editProject.html',
-				controller:  'projectFinder'
+				controller:  'projectController'
 			})
 		.otherwise({ redirectTo: '/' });
 });
